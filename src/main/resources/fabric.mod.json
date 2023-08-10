@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "teatopia",
+  "version": "${version}",
+  "name": "Teatopia",
+  "description": "Simple mod adding Teas for MC1.18.2-Fabric",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Robustum/Teatopia"
+  },
+  "license": "MPL-2.0",
+  "icon": "assets/teatopia/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.robustum.teatopia.client.TeatopiaClient"
+      }
+    ],
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.robustum.teatopia.common.Teatopia"
+      }
+    ],
+    "preLaunch": [
+      {
+        "adapter": "kotlin",
+        "value": "io.github.robustum.teatopia.prelaunch.TeatopiaPreLaunch"
+      }
+    ]
+  },
+  "mixins": [
+    "teatopia.mixins.json"
+  ],
+  "depends": {
+    "brrp_v1": "${brrp_version}",
+    "fabric": "*",
+    "fabric-language-kotlin": "${fabric_kotlin_version}",
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
