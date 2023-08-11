@@ -34,7 +34,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
-    modImplementation "net.devtech:arrp:0.6.7"
+    modImplementation "curse.maven:arrp-463113:3680866"
     modImplementation "com.terraformersmc:modmenu:3.2.5"
     modImplementation "me.shedaniel.cloth:cloth-config-fabric:6.4.90"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.3.618"
