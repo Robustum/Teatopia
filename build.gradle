@@ -34,11 +34,11 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
     modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
-    modImplementation "pers.solid:brrp-fabric:${project.brrp_version}-1.18.2"
+    modImplementation "net.devtech:arrp:0.6.7"
     modImplementation "com.terraformersmc:modmenu:3.2.5"
-    modImplementation "dev.architectury:architectury-fabric:4.11.93"
     modImplementation "me.shedaniel.cloth:cloth-config-fabric:6.4.90"
-    modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:8.3.618"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.3.618"
+    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:8.3.618"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
@@ -50,15 +50,13 @@ processResources {
     inputs.property "minecraft_version", minecraft_version
     inputs.property "loader_version", loader_version
     inputs.property "fabric_kotlin_version", fabric_kotlin_version
-    inputs.property "brrp_version", brrp_version
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
         expand "version": version,
                 "minecraft_version": minecraft_version,
                 "loader_version": loader_version,
-                "fabric_kotlin_version": fabric_kotlin_version,
-                "brrp_version": brrp_version
+                "fabric_kotlin_version": fabric_kotlin_version
     }
 }
 
@@ -84,6 +82,10 @@ java {
     // if it is present.
     // If you remove this line, sources will not be generated.
     withSourcesJar()
+}
+
+kotlin {
+    jvmToolchain(targetJavaVersion)
 }
 
 jar {

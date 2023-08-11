@@ -35,7 +35,7 @@
     "teatopia.mixins.json"
   ],
   "depends": {
-    "brrp_v1": "${brrp_version}",
+    "advanced_runtime_resource_pack": "*",
     "fabric": "*",
     "fabric-language-kotlin": "${fabric_kotlin_version}",
     "fabricloader": ">=${loader_version}",

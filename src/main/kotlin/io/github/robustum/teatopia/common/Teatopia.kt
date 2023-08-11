@@ -1,10 +1,10 @@
 package io.github.robustum.teatopia.common
 
+import net.devtech.arrp.api.RuntimeResourcePack
 import net.fabricmc.api.ModInitializer
 import net.minecraft.util.Identifier
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
-import pers.solid.brrp.v1.api.RuntimeResourcePack
 
 object Teatopia : ModInitializer {
 
