@@ -17,7 +17,6 @@ object Teatopia : ModInitializer {
     const val MOD_NAME: String = "Teatopia"
 
     internal val RESOURCE_PACK = RuntimeResourcePack.create(id("runtime"))
-    internal val localeJa_Jp = JLang.lang()
     internal val localeEn_Us = JLang.lang()
 
     val itemGroup = FabricItemGroupBuilder.build(id("item_group")) { ItemStack(Items.APPLE) } // ToDo: お茶に変える1
@@ -25,7 +24,9 @@ object Teatopia : ModInitializer {
     val logger: Logger = LogManager.getLogger(MOD_NAME)
 
     override fun onInitialize() {
-        RESOURCE_PACK.addLang(id("ja_jp"), localeJa_Jp)
+        TeatopiaItems.freshTeaLeaf
+        TeatopiaItems.teaSapling
+        TeatopiaBlocks.teaTree
         RESOURCE_PACK.addLang(id("en_us"), localeEn_Us)
         RRPCallback.BEFORE_VANILLA.register { it.add(RESOURCE_PACK) }
     }

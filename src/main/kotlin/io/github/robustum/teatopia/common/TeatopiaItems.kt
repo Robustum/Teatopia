@@ -9,20 +9,26 @@ import net.minecraft.util.registry.Registry
 
 object TeatopiaItems {
 
-    private fun addSimpleItem(name: String, localizationEn: String, localizationJp: String = localizationEn): Item =
-        addItem(Item(Item.Settings().group(Teatopia.itemGroup)), name, localizationEn, localizationJp)
+    val freshTeaLeaf by lazy {
+        addSimpleItem("fresh_tea_leaf", "Fresh Tea Leaf")
+    }
+
+    val teaSapling by lazy {
+        addSimpleItem("tea_sapling", "Tea Sapling")
+    }
+
+    private fun addSimpleItem(name: String, localizationEn: String): Item =
+        addItem(Item(Item.Settings().group(Teatopia.itemGroup)), name, localizationEn)
 
     internal fun addBlockItem(
         block: Block,
         name: String,
         localizationEn: String,
-        localizationJp: String = localizationEn
     ): Item =
         addItem(
             BlockItem(block, Item.Settings().group(Teatopia.itemGroup)),
             name,
             localizationEn,
-            localizationJp,
             id("block/$name").toString()
         )
 
@@ -30,12 +36,10 @@ object TeatopiaItems {
         item: Item,
         name: String,
         localizationEn: String,
-        localizationJp: String = localizationEn,
         modelParent: String = "item/generated"
     ): Item {
         val registered = Registry.register(Registry.ITEM, id(name), item)
         Teatopia.localeEn_Us.item(id(name), localizationEn)
-        Teatopia.localeJa_Jp.item(id(name), localizationJp)
         Teatopia.RESOURCE_PACK.addModel(
             JModel.model(modelParent).textures(JTextures().layer0("${Teatopia.MOD_ID}:item/$name")),
             id("item/$name")
