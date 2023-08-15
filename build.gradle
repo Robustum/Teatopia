@@ -37,8 +37,8 @@ dependencies {
     modImplementation "curse.maven:arrp-463113:3680866"
     modImplementation "com.terraformersmc:modmenu:3.2.5"
     modImplementation "me.shedaniel.cloth:cloth-config-fabric:6.4.90"
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.3.618"
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:8.3.618"
+//    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:8.3.618"
+//    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:8.3.618"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
