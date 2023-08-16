@@ -4,7 +4,10 @@
   "version": "${version}",
   "name": "Teatopia",
   "description": "Simple mod adding Teas for MC1.18.2-Fabric",
-  "authors": [],
+  "authors": [
+    "Hiiragi283",
+    "toliner"
+  ],
   "contact": {
     "repo": "https://github.com/Robustum/Teatopia"
   },

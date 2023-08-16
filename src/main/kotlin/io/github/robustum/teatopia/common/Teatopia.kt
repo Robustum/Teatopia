@@ -5,6 +5,7 @@ import net.devtech.arrp.api.RuntimeResourcePack
 import net.devtech.arrp.json.lang.JLang
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
+import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
 import net.minecraft.util.Identifier
@@ -19,7 +20,8 @@ object Teatopia : ModInitializer {
     internal val RESOURCE_PACK = RuntimeResourcePack.create(id("runtime"))
     internal val localeEn_Us = JLang.lang()
 
-    val itemGroup = FabricItemGroupBuilder.build(id("item_group")) { ItemStack(Items.APPLE) } // ToDo: お茶に変える1
+    val itemGroup: ItemGroup =
+        FabricItemGroupBuilder.build(id("item_group")) { ItemStack(Items.APPLE) } // ToDo: お茶に変える1
 
     val logger: Logger = LogManager.getLogger(MOD_NAME)
 

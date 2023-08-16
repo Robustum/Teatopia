@@ -38,7 +38,7 @@ class TeaTreeBlock : PlantBlock(FabricBlockSettings.of(Material.PLANT)), Fertili
         builder.add(AGE)
     }
 
-    override fun getPickStack(world: BlockView?, pos: BlockPos?, state: BlockState?): ItemStack {
+    override fun getPickStack(world: BlockView, pos: BlockPos, state: BlockState): ItemStack {
         return ItemStack(TeatopiaItems.freshTeaLeaf)
     }
 
@@ -51,7 +51,7 @@ class TeaTreeBlock : PlantBlock(FabricBlockSettings.of(Material.PLANT)), Fertili
     }
 
     override fun grow(world: ServerWorld, random: Random, pos: BlockPos, state: BlockState) {
-        val i = min(MAX_AGE, state.get(AGE) + 1)
+        val i: Int = min(MAX_AGE, state.get(AGE) + 1)
         world.setBlockState(pos, state.with(AGE, i), Block.NOTIFY_LISTENERS)
     }
 
@@ -63,13 +63,13 @@ class TeaTreeBlock : PlantBlock(FabricBlockSettings.of(Material.PLANT)), Fertili
         hand: Hand,
         hit: BlockHitResult,
     ): ActionResult {
-        val age = state.get(AGE)
-        val isMature = age == 5
+        val age: Int = state.get(AGE)
+        val isMature: Boolean = age == 5
         if (!isMature && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS
         }
         if (isMature) {
-            val dropStack = if (player.getStackInHand(hand).isOf(Items.SHEARS)) {
+            val dropStack: ItemStack = if (player.getStackInHand(hand).isOf(Items.SHEARS)) {
                 ItemStack(TeatopiaItems.teaSapling, world.random.nextInt(1, 3))
             } else {
                 ItemStack(TeatopiaItems.freshTeaLeaf, world.random.nextInt(1, 4))
