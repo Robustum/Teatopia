@@ -28,7 +28,13 @@ object Teatopia : ModInitializer {
     override fun onInitialize() {
         TeatopiaItems.freshTeaLeaf
         TeatopiaItems.teaSapling
+        TeatopiaItems.driedTeaLeaves
+        TeatopiaItems.usedTeaLeaves
+        TeatopiaItems.lightShieldingSheet
         TeatopiaBlocks.teaTree
+        TeatopiaBlocks.teaTreeSheet
+        TeatopiaBlocks.millStone
+
         RESOURCE_PACK.addLang(id("en_us"), localeEn_Us)
         RRPCallback.BEFORE_VANILLA.register { it.add(RESOURCE_PACK) }
     }

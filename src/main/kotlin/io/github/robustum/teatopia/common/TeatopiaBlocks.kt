@@ -18,6 +18,13 @@ object TeatopiaBlocks {
         addBlock(TeaTreeBlock(), "tea_tree", "Tea Tree")
     }
 
+    val teaTreeSheet by lazy {
+        addBlock(TeaTreeBlock(), "tea_tree_sheet", "Tea Tree (Sheet)")
+    }
+
+    val millStone by lazy {
+        addBlock(TeaTreeBlock(), "millstone", "millstone")
+    }
     val blockItems: Map<Block, Item>
         get() = mutableBlockItems
     private val mutableBlockItems: MutableMap<Block, Item> = mutableMapOf()

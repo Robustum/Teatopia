@@ -17,6 +17,19 @@ object TeatopiaItems {
         addSimpleItem("tea_sapling", "Tea Sapling")
     }
 
+    val driedTeaLeaves by lazy {
+        addSimpleItem("dried_tea_leaves", "Dried tea leaves ")
+    }
+
+    val usedTeaLeaves by lazy {
+        addSimpleItem("used_tea_leaves", "Used tea leaves")
+    }
+
+    val lightShieldingSheet by lazy {
+        addSimpleItem("light_shielding_sheet", "Light shielding sheet")
+    }
+
+
     private fun addSimpleItem(name: String, localizationEn: String): Item =
         addItem(Item(Item.Settings().group(Teatopia.itemGroup)), name, localizationEn)
 

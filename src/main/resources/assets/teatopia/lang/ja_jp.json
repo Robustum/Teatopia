@@ -1,6 +1,11 @@
 {
   "block.teatopia.tea_tree": "茶の木",
+  "block.teatopia.tea_tree_sheet": "シートを被せた茶の木",
   "item.teatopia.tea_tree": "茶の木",
   "item.teatopia.fresh_tea_leaf": "新鮮な茶葉",
-  "item.teatopia.tea_sapling": "茶の苗木"
+  "item.teatopia.tea_sapling": "茶の苗木",
+  "item.teatopia.dried_tea_leaves": "茶葉",
+  "item.teatopia.used_tea_leaves": "茶殻",
+  "item.teatopia.light_shielding_sheet": "遮光シート",
+
 }
